@@ -1,0 +1,47 @@
+version: '3'
+services:
+
+  redis-sentinel1:
+     image: lgatica/redis-sentinel
+     build: .
+     network_mode: "host"
+     environment:
+      - CLIENTHOST=127.0.0.1
+      - CLIENTPORT=16379
+      - MASTERHOST=127.0.0.1
+      - MASTERPORT=6379
+      - QUORUM=2
+      - DOWN_AFTER_MILLISEC=3000
+      - FAILOVER_TIMEOUT=3000
+      - REQUIREPASS=1234
+     restart: always
+
+  redis-sentinel2:
+     image: lgatica/redis-sentinel
+     build: .
+     network_mode: "host"
+     environment:
+      - CLIENTHOST=127.0.0.1
+      - CLIENTPORT=16380
+      - MASTERHOST=127.0.0.1
+      - MASTERPORT=6379
+      - QUORUM=2
+      - DOWN_AFTER_MILLISEC=3000
+      - FAILOVER_TIMEOUT=3000
+      - REQUIREPASS=1234
+     restart: always
+
+  redis-sentinel3:
+     image: lgatica/redis-sentinel
+     build: .
+     network_mode: "host"
+     environment:
+      - CLIENTHOST=127.0.0.1
+      - CLIENTPORT=16381
+      - MASTERHOST=127.0.0.1
+      - MASTERPORT=6379
+      - QUORUM=2
+      - DOWN_AFTER_MILLISEC=3000
+      - FAILOVER_TIMEOUT=3000
+      - REQUIREPASS=1234
+     restart: always
