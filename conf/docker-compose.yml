@@ -17,7 +17,7 @@ services:
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
     volumes:
-      - "../sentinel-data/sentinel1:/redis"
+      - "../../sentinel-data/sentinel1:/redis"
     restart: always
 
   redis-sentinel2:
@@ -36,7 +36,7 @@ services:
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
     volumes:
-      - "../sentinel-data/sentinel2:/redis"
+      - "../../sentinel-data/sentinel2:/redis"
     restart: always
 
   redis-sentinel3:
@@ -55,5 +55,5 @@ services:
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
     volumes:
-      - "../sentinel-data/sentinel3:/redis"
+      - "../../sentinel-data/sentinel3:/redis"
     restart: always
