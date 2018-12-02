@@ -8,14 +8,14 @@ services:
       dockerfile: Dockerfile
     network_mode: "host"
     environment:
-      - CLIENTHOST=192.168.137.101
+      - REQUIREPASS=password1234
+      - MASTERPORT=6379
       - CLIENTPORT=26379
       - MASTERHOST=192.168.137.101
-      - MASTERPORT=6379
+      - CLIENTHOST=192.168.137.101
       - QUORUM=2
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
-      - REQUIREPASS=password1234
     volumes:
       - "../sentinel-data/sentinel1:/redis"
     restart: always
@@ -27,14 +27,14 @@ services:
       dockerfile: Dockerfile
     network_mode: "host"
     environment:
-      - CLIENTHOST=192.168.137.101
+      - REQUIREPASS=password1234
+      - MASTERPORT=6379
       - CLIENTPORT=26380
       - MASTERHOST=192.168.137.101
-      - MASTERPORT=6379
+      - CLIENTHOST=192.168.137.101
       - QUORUM=2
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
-      - REQUIREPASS=password1234
     volumes:
       - "../sentinel-data/sentinel2:/redis"
     restart: always
@@ -46,14 +46,14 @@ services:
       dockerfile: Dockerfile
     network_mode: "host"
     environment:
-      - CLIENTHOST=192.168.137.101
+      - REQUIREPASS=password1234
+      - MASTERPORT=6379
       - CLIENTPORT=26381
       - MASTERHOST=192.168.137.101
-      - MASTERPORT=6379
+      - CLIENTHOST=192.168.137.101
       - QUORUM=2
       - DOWN_AFTER_MILLISEC=5000
       - FAILOVER_TIMEOUT=30000
-      - REQUIREPASS=password1234
     volumes:
       - "../sentinel-data/sentinel3:/redis"
     restart: always
