@@ -7,12 +7,10 @@ MAINTAINER Carrey (jaehun.lee@ticketlink.co.kr)
 RUN rm -rf /usr/local/bin/sentinel-entrypoint.sh
 ADD sentinel.conf /usr/local/bin/sentinel.conf
 ADD sentinel-entrypoint.sh /usr/local/bin/sentinel-entrypoint.sh
-ADD notify.sh /usr/local/bin/notify.sh
 
 ## change access authority
 RUN chmod 755 /usr/local/bin/sentinel.conf
 RUN chmod 755 /usr/local/bin/sentinel-entrypoint.sh
-RUN chmod 755 /usr/local/bin/notify.sh
 RUN chown redis:redis /usr/local/bin/sentinel.conf
 RUN chown redis:redis /usr/local/bin/sentinel-entrypoint.sh
 
